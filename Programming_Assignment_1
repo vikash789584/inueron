@@ -1,0 +1,46 @@
+Q1.Write a Python program to print 'Hello Python'?
+ans: 
+print("Hello Python")
+
+Q2.Write a Python program to do arithmetical operations addition and division.?
+ans:
+a=10
+b=20
+c=a+b
+d=a/b
+print("The addition is",c)
+print("The division is",d)
+
+Q3.Write a Python program to find the area of a triangle?
+ans:
+a = float(input('Enter first side: '))  
+b = float(input('Enter second side: '))  
+c = float(input('Enter third side: '))  
+
+# calculate the semi-perimeter  
+s = (a + b + c) / 2  
+
+# calculate the area  
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5  
+print('The area of the triangle is %0.2f' %area)  
+
+Q4.Write a Python program to swap two variables?
+ans:
+a=10
+b=20
+temp=0
+print("Before Swapping")
+print("First Number:",a)
+print("Second Number:",b)
+temp=b
+b=a
+a=temp
+print("After Swapping")
+print("First Number:",a)
+print("Second Number:",b)
+
+Q5.Write a Python program to generate a random number?
+ans:
+import random
+a=random.random()
+print(a)
