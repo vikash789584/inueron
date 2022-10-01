@@ -1,0 +1,94 @@
+
+Q1.In the below elements which of them are values or an expression? eg:- values can be
+integer or string and expressions will be mathematical operators.
+*
+'hello'
+-87.8
+-
+/
++
+6
+ans: 
+Operator:- +,-,*,/
+Values:- 'hello',-87.8
+
+Q2.What is the difference between string and variable?
+ans:- Variables are symbols that you can use to store data in a program and a String is a type of information you would store in a Variable
+example:-
+a=input("Enter Yoyr name") # a is variable
+a="Hello my name is Deepak kumar" #Hello my name is Deepak kumar is string
+
+Q3.Describe three different data type.
+ans:- 
+1.Number data type: 
+They are immutable data type, this means that you can not change it's value.
+three different Numeric data type available in python:
+1.Integer
+ex:
+a=20
+2.Float
+ex:
+b=20.5
+3.Complex
+ex:
+c=2+3j
+2.String data type:
+Strings are sequence of one or more character strings
+ex:
+a="Hello my name is vikash"
+3.Boolean data type:
+It is a data type that returns a value of True and False when the program is run correctly.
+ex:
+one = True
+two = False
+
+print(type(one))
+print(type(two))
+
+Q4.what is an expression made up of what do all expressions do?
+ans:An expression is a combination of operators and operands that is interpreted to produce some other value. 
+In any programming language, an expression is evaluated as per the precedence of its operators.
+I am just writing  the names and examples of some expressions.
+1. Constant Expressions:
+x = 15 + 1.3
+print(x)
+2. Arithmetic Expressions:
+ex:
++       x + y	Addition
+–	x – y	Subtraction
+*	x * y	Multiplication
+/	x / y	Division
+//	x // y	Quotient
+%	x % y	Remainder
+**	x ** y	Exponentiation
+3. Integral Expressions: 
+ex:
+a = 13
+b = 12.0 
+c = a + int(b)
+print(c)
+
+Q5.This assignment statements, like spam = 10. What is the difference between an expression and a statement?
+ans: An expression evaluates to a single value. A statement does not.
+
+Q6.After running the following code, what does the variable bacon contain?
+bacon = 22
+bacon + 1
+ans:The bacon variable is set to 20. The bacon + 1 expression does not reassign the value in bacon (that would need an assignment statement: bacon = bacon + 1)
+
+Q7.What should the values of the following two terms be?
+'spam' + 'spamspam'
+'spam'*3
+ans:Both expressions evaluate to the string 'spamspamspam'.
+
+Q8.Why is eggs a valid variable name while 100 is invalid?
+ans: eggs a valid variable yes but 100 is not a valid variable name because variable name is can not start with a number.
+
+Q9.What three functions can be used to get the integer, floating-point number, or string version of a value?
+ans:The int(), float(), and str() functions can be used to get the integer, floating-point number or string version of a value.
+
+Q10.Why does this expression cause an error? How can you fix it?
+'I have eaten' + 99 + 'burritos'
+ans:This is not the correct way because with string + only string appends.
+The expression causes an error because 99 is an integer, and only strings can be concatenated to other strings with the + operator. 
+The correct way is I have eaten ' + str(99) + ' burritos.'.
