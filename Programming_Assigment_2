@@ -1,0 +1,42 @@
+Q1. Write a Python program to convert kilometers to miles?
+ans:
+dist_km=int(input("ENter the distance in kilomters:"))
+conv_fac = 0.621371
+miles=dist_km*conv_fac
+print("the distance in miles",miles)
+
+Q2. Write a Python program to convert Celsius to Fahrenheit?
+ans:
+celsius=int(input("Enter the temperature in celsius:"))
+Fahrenheit=celsius*9/5+32
+print("The temperature in Fahrenheit",Fahrenheit)
+
+Q3. Write a Python program to display calendar?
+ans:
+import calendar
+print(calendar.month(2022,9))
+
+Q4. Write a Python program to solve quadratic equation?
+ans:
+import cmath
+a = 1
+b = 5
+c = 6
+# calculate the discriminant
+d = (b**2) - (4*a*c)
+# find two solutions
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))
+
+Q5. Write a Python program to swap two variables without temp variable?
+ans:
+a=10
+b=20
+print("Before Swapping")
+print("First Number",a)
+print("Second Number",b)
+a,b=b,a
+print("After Swapping")
+print("First Number",a)
+print("Second Number",b)
