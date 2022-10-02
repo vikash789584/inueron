@@ -1,0 +1,109 @@
+Q1.What are the two values of the Boolean data type? How do you write them? 
+Ans: True and False, using capital T and F, with the rest of the word in lowercase. 
+
+Q2. What are the three different types of Boolean operators? 
+Ans: and, or, and not. 
+and:- this is used to get two Booleans and check whether they are both True. 
+
+Or:- this is used to get the second value if the first one is false. If the first one is true, it gets  The first one. 
+
+Not:- this is used to  invert the Boolean value. Gets the opposite value! 
+
+Q3. Make a list of each Boolean operator’s truth tables (i.e. every possible combination of Boolean values for the operator and what it evaluate ). 
+Ans:  
+True and True = True. 
+True and False = False. 
+False and True = False. 
+False and False = False. 
+True or True = True. 
+True or False = True. 
+False or True = True. 
+False or False = False. 
+not True = False. 
+not False = True. 
+
+Q4. What are the values of the following expressions? 
+(5 > 4) and (3 == 5)  
+not (5 > 4) 
+(5 > 4) or (3 == 5) 
+not ((5 > 4) or (3 == 5)) 
+(True and True) and (True == False) 
+(not False) or (not True) 
+Ans: 
+(5 > 4) and (3 == 5) =  False 
+not (5 > 4) = False 
+(5 > 4) or (3 == 5)  = True 
+not ((5 > 4) or (3 == 5)) = False 
+(True and True) and (True == False) = False 
+(not False) or (not True) = True 
+
+Q5. What are the six comparison operators? 
+Ans: these are six comparison operators:- 
+1. == 
+2.  != 
+3. < 
+4.  > 
+5. <=  
+6.  >= 
+
+Q6. How do you tell the difference between the equal to and assignment operators? Describe a condition and when you would use one. 
+Ans: == is the equal to operator that compares two values and evaluates to a Boolean, 
+while = is the assignment operator that stores a value in a variable. 
+A condition is an expression used in a flow control statement that evaluates to a Boolean value 
+
+Q7. Identify the three blocks in this code: 
+spam = 0 
+if spam == 10: 
+print(‘eggs’) 
+if spam > 5: 
+print(‘bacon’) 
+else: 
+print(‘ham') 
+print(‘spam') 
+print('spam’) 
+Ans:  
+First Block: 
+if spam == 10: 
+print(‘eggs’) 
+
+Second Block: 
+if spam > 5: 
+print(‘bacon’) 
+
+Third Block: 
+else: 
+print(‘ham') 
+print(‘spam') 
+print('spam’) 
+
+Q8. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints Greetings! if anything else is stored in spam. 
+Ans: 
+if spam == 1: 
+print('Hello') 
+elif spam == 2: 
+print('Howdy') 
+else: 
+print('Greetings!') 
+
+Q9.If your programme is stuck in an endless loop, what keys you’ll press? 
+Ans:- I don’t Know this answer. 
+
+Q10. How can you tell the difference between break and continue? 
+Ans:  With break we are out of the loop and with continue we come to the starting point of the loop. 
+
+Q11. In a for loop, what is the difference between range(10), range(0, 10), and range(0, 10, 1)? 
+Ans: The range(10) call ranges from 0 up to (but not including) 10, range(0, 10) explicitly tells the 
+loop to start at 0, and range(0, 10, 1) explicitly tells the loop to increase the variable by 1 on each iteration. 
+
+Q12. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent program that prints the numbers 1 to 10 using a while loop. 
+Ans:  
+for i in range(1,11): 
+print(i) 
+and: 
+i = 1 
+while i <= 10: 
+print(i) 
+i = i + 1 
+
+Q13. If you had a function named bacon() inside a module named spam, how would you call it after importing spam? 
+Ans: spam.bacon(). 
