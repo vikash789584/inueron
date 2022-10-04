@@ -1,0 +1,86 @@
+Q1.Write a Python Program to Find LCM?
+ans:
+num1 = 54
+num2 = 24
+#num1=int(input("Enter a first number"))
+#num2=int(input("Enter a second number"))
+if num1 > num2:
+    greater = num1
+else:
+    greater = num2
+
+while(True):
+    if((greater % num1 == 0) and (greater % num2 == 0)):
+        lcm = greater
+        break
+    greater += 1
+print("The L.C.M. is", lcm)
+
+Q2.Write a Python Program to Find HCF?
+ans:
+num1 = 54 
+num2 = 24
+#num1=int(input("Enter a first number"))
+#num2=int(input("Enter a second number"))
+if num1 > num2:
+    smaller = num2
+else:
+    smaller = num1
+for i in range(1, smaller+1):
+    if((num1 % i == 0) and (num2 % i == 0)):
+        hcf = i 
+print("The H.C.F. is", hcf)
+
+Q3.Write a Python Program to Convert Decimal to Binary, Octal and Hexadecimal?
+ans:
+num = 34
+#num=int(input("Enter a number"))
+print("The decimal value of", num, "is:")
+print(bin(num), "in binary.")
+print(oct(num), "in octal.")
+print(hex(num), "in hexadecimal.")
+
+Q4.Write a Python Program To Find ASCII value of a character?
+ans:
+c= '0'
+#c=input("Enter a charcter")
+print("The ASCII value of '" + c + "' is", ord(c))
+
+Q5.Write a Python Program to Make a Simple Calculator with 4 basic mathematical operations?
+ans:
+def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
+def multiply(x, y):
+    return x * y
+def divide(x, y):
+    return x / y
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+    choice = input("Enter choice(1/2/3/4): ")
+    if choice in ('1', '2', '3', '4'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
