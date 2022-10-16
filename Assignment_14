@@ -1,0 +1,24 @@
+Q1.What does RGBA stand for?
+ans:RGBA stands for red green blue alpha.
+
+Q2.From the Pillow module, how do you get the RGBA value of any images?
+ans: The RGBA value of an image can be retrieved using the getRGBA() function.
+
+Q3.What is a box tuple, and how does it work?
+ans:A box tuple is a data structure that allows efficient packing and unpacking of data values.
+It is used to store data in a way that makes it easy to access and manipulate.
+
+Q4.Use your image and load in notebook then, How can you find out the width and height of an Image object?
+ans: The width and height of an Image object can be found using the width and height attributes.
+
+Q5.What method would you call to get Image object for a 100×100 image, excluding the lower-left quarter of it?
+ans: You would use the getSubImage() method.
+
+Q6.After making changes to an Image object, how could you save it as an image file?
+ans: After making changes to an Image object, you could save it as an image file by calling the save() function.
+
+Q7.What module contains Pillow’s shape-drawing code?
+ans: The ImageDraw module in the Pillow library contains the code for drawing shapes.
+
+Q8.Image objects do not have drawing methods. What kind of object does? How do you get this kind of object?
+ans: A Graphics object has drawing methods. You get a Graphics object by calling the getGraphics() method on a Component.
