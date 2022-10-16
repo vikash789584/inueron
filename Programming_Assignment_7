@@ -1,0 +1,66 @@
+Q1.Write a Python Program to find sum of array?
+ans: 
+arr = [12, 3, 4, 15]
+ans = sum(arr)
+# display sum
+print('Sum of the array is ', ans)
+
+Q2.Write a Python Program to find largest element in an array?
+ans:
+def largest(arr, n):
+    max = arr[0]
+    for i in range(1, n):
+        if arr[i] > max:
+            max = arr[i]
+    return max
+arr = [10, 324, 45, 90, 9808]
+n = len(arr)
+Ans = largest(arr, n)
+print("Largest in given array ", Ans)
+
+Q3.Write a Python Program for array rotation?
+ans:
+def rotateArray(arr, n, d):
+    temp = []
+    i = 0
+    while (i < d):
+        temp.append(arr[i])
+        i = i + 1
+    i = 0
+    while (d < n):
+        arr[i] = arr[d]
+        i = i + 1
+        d = d + 1
+    arr[:] = arr[: i] + temp
+    return arr
+
+# Driver function to test above function
+arr = [1, 2, 3, 4, 5, 6, 7]
+print("Array after left rotation is: ", end=' ')
+print(rotateArray(arr, len(arr), 2))
+
+Q4.Write a Python Program to Split the array and add the first part to the end?
+ans:
+def splitArr(arr, n, k): 
+    for i in range(0, k): 
+        x = arr[0]
+        for j in range(0, n-1):
+            arr[j] = arr[j + 1]
+
+        arr[n-1] = x
+
+arr = [12, 10, 5, 6, 52, 36]
+n = len(arr)
+position = 2
+splitArr(arr, n, position)
+for i in range(0, n): 
+    print(arr[i], end = ' ')
+
+Q5.Write a Python Program to check if given array is Monotonic?
+ans:
+def isMonotonic(A):
+       return (all(A[i] <= A[i + 1] for i in range(len(A) - 1)) or
+            all(A[i] >= A[i + 1] for i in range(len(A) - 1)))
+A = [6, 5, 4, 4]
+# Print result
+print(isMonotonic(A))
