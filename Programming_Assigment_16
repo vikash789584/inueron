@@ -1,0 +1,265 @@
+@@ -0,0 +1,264 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "96180b91",
+   "metadata": {},
+   "source": [
+    "## Question1. Write a function that stutters a word as if someone is struggling to read it. The first two letters are repeated twice with an ellipsis ... and space after each, and then the word is pronounced with a question mark ?.\n",
+    "## Examples\n",
+    "stutter(\"incredible\") ➞ \"in... in... incredible?\"\n",
+    "\n",
+    "stutter(\"enthusiastic\") ➞ \"en... en... enthusiastic?\"\n",
+    "\n",
+    "stutter(\"outstanding\") ➞ \"ou... ou... outstanding?\"\n",
+    "\n",
+    "Hint :- Assume all input is in lower case and at least two characters long.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "a494f2c8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "in... in... incredible?\n",
+      "en... en... enthusiastic?\n",
+      "ou... ou... outstanding?\n"
+     ]
+    }
+   ],
+   "source": [
+    "def stutter(word):\n",
+    "    stuttered = word[:2] + \"... \" + word[:2] + \"... \" + word + \"?\"\n",
+    "    return stuttered\n",
+    "\n",
+    "print(stutter(\"incredible\")) # output: \"in... in... incredible?\"\n",
+    "print(stutter(\"enthusiastic\")) # output: \"en... en... enthusiastic?\"\n",
+    "print(stutter(\"outstanding\")) # output: \"ou... ou... outstanding?\"\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b3cb0b01",
+   "metadata": {},
+   "source": [
+    "## Question 2.Create a function that takes an angle in radians and returns the corresponding angle in degrees rounded to one decimal place.\n",
+    "## Examples\n",
+    "radians_to_degrees(1) ➞ 57.3\n",
+    "\n",
+    "radians_to_degrees(20) ➞ 1145.9\n",
+    "\n",
+    "radians_to_degrees(50) ➞ 2864.8\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "a578e9cd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "57.3\n",
+      "1145.9\n",
+      "2864.8\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "def radians_to_degrees(rad):\n",
+    "    deg = rad * (180 / math.pi)\n",
+    "    deg_rounded = round(deg, 1)\n",
+    "    return deg_rounded\n",
+    "\n",
+    "\n",
+    "print(radians_to_degrees(1)) # output: 57.3\n",
+    "print(radians_to_degrees(20)) # output: 1145.9\n",
+    "print(radians_to_degrees(50)) # output: 2864.8\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "481c4639",
+   "metadata": {},
+   "source": [
+    "## Question 3. In this challenge, establish if a given integer num is a Curzon number. If 1 plus 2 elevated to num is exactly divisible by 1 plus 2 multiplied by num, then num is a Curzon number.\n",
+    "## Given a non-negative integer num, implement a function that returns True if num is a Curzon number, or False otherwise.\n",
+    "## Examples\n",
+    "## is_curzon(5) ➞ True\n",
+    "## 2 ** 5 + 1 = 33\n",
+    "## 2 * 5 + 1 = 11\n",
+    "## 33 is a multiple of 11\n",
+    "## is_curzon(10) ➞ False\n",
+    "## 2 ** 10 + 1 = 1025\n",
+    "## 2 * 10 + 1 = 21\n",
+    "## 1025 is not a multiple of 21\n",
+    "## is_curzon(14) ➞ True\n",
+    "## 2 ** 14 + 1 = 16385\n",
+    "## 2 * 14 + 1 = 29\n",
+    "## 16385 is a multiple of 29\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "c65b5149",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_curzon(num):\n",
+    "    numerator = 2**num + 1\n",
+    "    denominator = 2*num + 1\n",
+    "    if numerator % denominator == 0:\n",
+    "        return True\n",
+    "    else:\n",
+    "        return False\n",
+    "\n",
+    "    \n",
+    "print(is_curzon(5)) \n",
+    "print(is_curzon(10)) \n",
+    "print(is_curzon(14)) \n"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "id": "87a83bab",
+   "metadata": {},
+   "source": [
+    "## Question 4.Given the side length x find the area of a hexagon.\n",
+    "## Examples\n",
+    "## area_of_hexagon(1) ➞ 2.6\n",
+    "\n",
+    "## area_of_hexagon(2) ➞ 10.4\n",
+    "\n",
+    "## area_of_hexagon(3) ➞ 23.4\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "dd051eeb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.6\n",
+      "10.4\n",
+      "23.4\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "def area_of_hexagon(x):\n",
+    "    area = ((3*math.sqrt(3))/2) * (x**2)\n",
+    "    return round(area, 1)\n",
+    "\n",
+    "\n",
+    "print(area_of_hexagon(1)) \n",
+    "print(area_of_hexagon(2)) \n",
+    "print(area_of_hexagon(3)) \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c65bb2a1",
+   "metadata": {},
+   "source": [
+    "## Question 5. Create a function that returns a base-2 (binary) representation of a base-10 (decimal) string number. To convert is simple: ((2) means base-2 and (10) means base-10) 010101001(2) = 1 + 8 + 32 + 128.\n",
+    "## Going from right to left, the value of the most right bit is 1, now from that every bit to the left will be x2 the value, value of an 8 bit binary numbers are (256, 128, 64, 32, 16, 8, 4, 2, 1).\n",
+    "## Examples\n",
+    "## binary(1) ➞ \"1\"\n",
+    "## 1*1 = 1\n",
+    "## binary(5) ➞ \"101\"\n",
+    "# 1*1 + 1*4 = 5\n",
+    "## binary(10) ➞ \"1010\"\n",
+    "# 1*2 + 1*8 = 10\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "77cbe97b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "101\n",
+      "1010\n"
+     ]
+    }
+   ],
+   "source": [
+    "def binary(decimal):\n",
+    "    binary_str = \"\"\n",
+    "    while decimal > 0:\n",
+    "        remainder = decimal % 2\n",
+    "        binary_str = str(remainder) + binary_str\n",
+    "        decimal = decimal // 2\n",
+    "    return binary_str\n",
+    "\n",
+    "\n",
+    "print(binary(1)) \n",
+    "print(binary(5)) \n",
+    "print(binary(10)) \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "12382461",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
