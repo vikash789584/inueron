@@ -1,0 +1,132 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "aedacc07",
+   "metadata": {},
+   "source": [
+    "## 1. What is the result of the code, and why?\n",
+    "## >>> def func(a, b=6, c=8):\n",
+    "## print(a, b, c)\n",
+    "## >>> func(1, 2)\n",
+    "\n",
+    "\n",
+    "Ans:-The result of the code will be 1 2 8.\n",
+    "\n",
+    "In the function definition, the parameter a is a positional parameter and has no default value. b and c are keyword parameters with default values of 6 and 8, respectively.\n",
+    "\n",
+    "When the function is called with the arguments 1 and 2, 1 is assigned to a as a positional argument, and 2 is assigned to b as a keyword argument. Since no value is given for c, it takes its default value of 8. The print statement in the function body prints the values of a, b, and c."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "763f30be",
+   "metadata": {},
+   "source": [
+    "## 2. What is the result of this code, and why?\n",
+    "## >>> def func(a, b, c=5):\n",
+    "## print(a, b, c)\n",
+    "## >>> func(1, c=3, b=2)\n",
+    "\n",
+    "\n",
+    "Ans:-The output of this code is 1 2 3. This is because in the function call func(1, c=3, b=2), the argument 1 is assigned to the parameter a, 2 is assigned to b, and 3 is assigned to c via the keyword argument c=3."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e33074c7",
+   "metadata": {},
+   "source": [
+    "## 3. How about this code: what is its result, and why?\n",
+    "## >>> def func(a, *pargs):\n",
+    "## print(a, pargs)\n",
+    "## >>> func(1, 2, 3)\n",
+    "\n",
+    "\n",
+    "Ans:-The output of the code will be: 1 (2, 3).\n",
+    "\n",
+    "In this case, the function func() takes in a required argument a, and then any number of additional positional arguments are collected into a tuple pargs by using the * operator.\n",
+    "\n",
+    "When the function is called with arguments 1, 2, 3, the value 1 is assigned to a, and the remaining arguments 2 and 3 are collected into pargs tuple. The print statement then displays the values of a and pargs, resulting in output of 1 (2, 3)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "23044a62",
+   "metadata": {},
+   "source": [
+    "## 4. What does this code print, and why?\n",
+    "## >>> def func(a, **kargs):\n",
+    "## print(a, kargs)\n",
+    "## >>> func(a=1, c=3, b=2)\n",
+    "\n",
+    "\n",
+    "Ans:-The code will print 1 {'c': 3, 'b': 2}.\n",
+    "\n",
+    "Here, the function func takes one required argument a and any number of keyword arguments in the form of a dictionary using **kargs. When func is called with the arguments a=1, c=3, and b=2, the value of a is set to 1, and the remaining arguments c=3 and b=2 are packed into a dictionary and passed to the function using the ** syntax. Hence, when the function is executed, the values of a and kargs are printed as 1 and {'c': 3, 'b': 2} respectively."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d445a948",
+   "metadata": {},
+   "source": [
+    "## 5. What gets printed by this, and explain?\n",
+    "## >>> def func(a, b, c=8, d=5): print(a, b, c, d)\n",
+    "## >>> func(1, *(5, 6))\n",
+    "\n",
+    "Ans:-The output of this code is 1 5 6 5.\n",
+    "\n",
+    "Here, the *(5, 6) notation is used to unpack the tuple (5, 6) and pass its elements as separate arguments to the function func(). The first argument, a, gets the value 1 as expected. The second argument, b, gets the first value of the unpacked tuple, which is 5. Since there is no explicit value given for c in the function call, it takes the default value of 8. The last argument, d, gets the second value of the unpacked tuple, which is 6. So, the final output is 1 5 8 6."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8d9c540d",
+   "metadata": {},
+   "source": [
+    "## 6. what is the result of this, and explain?\n",
+    "## >>> def func(a, b, c): a = 2; b[0] = 'x'; c['a'] = 'y'\n",
+    "## >>> l=1; m=[1]; n={'a':0}\n",
+    "## >>> func(l, m, n)\n",
+    "## >>> l, m, n\n",
+    "\n",
+    "\n",
+    "Ans:-The function func() takes in three arguments a, b, and c. The value of a is changed to 2 inside the function. The first element of b is set to 'x' and the value of key 'a' in c is set to 'y' inside the function.\n",
+    "\n",
+    "When the function is called with l=1, m=[1], and n={'a':0}, the value of l is not modified by the function because integers are immutable. However, the value of m is modified because lists are mutable, and the first element of the list is changed to 'x'. Similarly, the value of n is also modified because dictionaries are mutable, and the value of key 'a' is set to 'y'.\n",
+    "\n",
+    "Therefore, after the function call, l is still 1, m is now ['x'], and n is now {'a': 'y'}."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9f7461d5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
