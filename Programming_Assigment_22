@@ -1,0 +1,271 @@
+@@ -0,0 +1,270 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d576f38c",
+   "metadata": {},
+   "source": [
+    "## Question1:Create a function that takes three parameters where:\n",
+    "## •\tx is the start of the range (inclusive).\n",
+    "## •\ty is the end of the range (inclusive).\n",
+    "## •\tn is the divisor to be checked against.\n",
+    "## Return an ordered list with numbers in the range that are divisible by the third parameter n. Return an empty list if there are no numbers that are divisible by n.\n",
+    "## Examples\n",
+    "list_operation(1, 10, 3) ➞ [3, 6, 9]\n",
+    "\n",
+    "list_operation(7, 9, 2) ➞ [8]\n",
+    "\n",
+    "list_operation(15, 20, 7) ➞ []\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "5092176e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[3, 6, 9]\n",
+      "[8]\n",
+      "[]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def list_operation(x, y, n):\n",
+    "    result = []\n",
+    "    for i in range(x, y+1):\n",
+    "        if i % n == 0:\n",
+    "            result.append(i)\n",
+    "    return result\n",
+    "\n",
+    "\n",
+    "print(list_operation(1, 10, 3))  \n",
+    "print(list_operation(7, 9, 2))  \n",
+    "print(list_operation(15, 20, 7))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e81b5a33",
+   "metadata": {},
+   "source": [
+    "## Question2:Create a function that takes in two lists and returns True if the second list follows the first list by one element, and False otherwise. In other words, determine if the second list is the first list shifted to the right by 1.\n",
+    "## Examples\n",
+    "simon_says([1, 2], [5, 1]) ➞ True\n",
+    "\n",
+    "simon_says([1, 2], [5, 5]) ➞ False\n",
+    "\n",
+    "simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]) ➞ True\n",
+    "\n",
+    "simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]) ➞ False\n",
+    "## Notes\n",
+    "•\tBoth input lists will be of the same length, and will have a minimum length of 2.\n",
+    "\n",
+    "•\tThe values of the 0-indexed element in the second list and the n-1th indexed element in the first list do not matter.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "2d8d7936",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "True\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "def simon_says(lst1, lst2):\n",
+    "    return lst1[:-1] == lst2[1:]\n",
+    "\n",
+    "\n",
+    "print(simon_says([1, 2], [5, 1]))    \n",
+    "print(simon_says([1, 2], [5, 5]))    \n",
+    "print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))    \n",
+    "print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))    \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3684d7a2",
+   "metadata": {},
+   "source": [
+    "## Question3:A group of friends have decided to start a secret society. The name will be the first letter of each of their names, sorted in alphabetical order.\n",
+    "## Create a function that takes in a list of names and returns the name of the secret society.\n",
+    "## Examples\n",
+    "society_name([\"Adam\", \"Sarah\", \"Malcolm\"]) ➞ \"AMS\"\n",
+    "\n",
+    "society_name([\"Harry\", \"Newt\", \"Luna\", \"Cho\"]) ➞ \"CHLN\"\n",
+    "\n",
+    "society_name([\"Phoebe\", \"Chandler\", \"Rachel\", \"Ross\", \"Monica\", \"Joey\"])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "165c1074",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "AMS\n",
+      "CHLN\n",
+      "CJMPRR\n"
+     ]
+    }
+   ],
+   "source": [
+    "def society_name(names):\n",
+    "    return ''.join(sorted([name[0] for name in names]))\n",
+    "\n",
+    "\n",
+    "print(society_name([\"Adam\", \"Sarah\", \"Malcolm\"]))  \n",
+    "print(society_name([\"Harry\", \"Newt\", \"Luna\", \"Cho\"]))  \n",
+    "print(society_name([\"Phoebe\", \"Chandler\", \"Rachel\", \"Ross\", \"Monica\", \"Joey\"]))  \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4fb6f1cb",
+   "metadata": {},
+   "source": [
+    "## Question4:An isogram is a word that has no duplicate letters. Create a function that takes a string and returns either True or False depending on whether or not it's an \"isogram\".\n",
+    "## Examples\n",
+    "is_isogram(\"Algorism\") ➞ True\n",
+    "\n",
+    "is_isogram(\"PasSword\") ➞ False\n",
+    "# Not case sensitive.\n",
+    "\n",
+    "is_isogram(\"Consecutive\") ➞ False\n",
+    "## Notes\n",
+    "•\tIgnore letter case (should not be case sensitive).\n",
+    "\n",
+    "•\tAll test cases contain valid one word strings.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "34e4f7e2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_isogram(txt):\n",
+    "    txt = txt.lower()\n",
+    "    seen = set()\n",
+    "    for char in txt:\n",
+    "        if char in seen:\n",
+    "            return False\n",
+    "        seen.add(char)\n",
+    "    return True\n",
+    "\n",
+    "\n",
+    "print(is_isogram(\"Algorism\")) \n",
+    "print(is_isogram(\"PasSword\")) \n",
+    "print(is_isogram(\"Consecutive\")) \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "855a4e22",
+   "metadata": {},
+   "source": [
+    "## Question5:Create a function that takes a string and returns True or False, depending on whether the characters are in order or not.\n",
+    "## Examples\n",
+    "is_in_order(\"abc\") ➞ True\n",
+    "\n",
+    "is_in_order(\"edabit\") ➞ False\n",
+    "\n",
+    "is_in_order(\"123\") ➞ True\n",
+    "\n",
+    "is_in_order(\"xyzz\") ➞ True\n",
+    "## Notes\n",
+    "You don't have to handle empty strings.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "cde205c6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_in_order(txt):\n",
+    "    for i in range(len(txt)-1):\n",
+    "        if txt[i] > txt[i+1]:\n",
+    "            return False\n",
+    "    return True\n",
+    "\n",
+    "\n",
+    "print(is_in_order(\"abc\"))    \n",
+    "print(is_in_order(\"edabit\")) \n",
+    "print(is_in_order(\"123\"))    \n",
+    "print(is_in_order(\"xyzz\"))   \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9310301c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
