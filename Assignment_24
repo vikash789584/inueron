@@ -1,0 +1,208 @@
+@@ -0,0 +1,207 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "b4f84efb",
+   "metadata": {},
+   "source": [
+    "## 1. What is the relationship between def statements and lambda expressions ?\n",
+    "\n",
+    "Ans:-Both def statements and lambda expressions are used to define functions in Python, but they differ in their syntax and intended use.\n",
+    "\n",
+    "def statements are used to define named functions, which are defined using the def keyword followed by the function name, parameters, and a block of code that implements the function. A def statement creates a function object and assigns it to a name in the current namespace.\n",
+    "\n",
+    "On the other hand, lambda expressions are used to create anonymous functions, which are functions that do not have a name. They are defined using the lambda keyword, followed by the parameters and a single expression that is evaluated and returned as the function result. The resulting function object can be assigned to a variable or passed as an argument to another function.\n",
+    "\n",
+    "The main difference between def statements and lambda expressions is that def statements can define complex functions with multiple statements and control structures, while lambda expressions can only define a single expression. Additionally, def statements can include default values for parameters and support variable-length argument lists, while lambda expressions do not."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bd7c6f2f",
+   "metadata": {},
+   "source": [
+    "## 2. What is the benefit of lambda?\n",
+    "\n",
+    "Ans:-Lambda functions have several benefits, including:\n",
+    "\n",
+    "1.Concise syntax: Lambda functions are defined in a single line of code, making them easy to read and write.\n",
+    "\n",
+    "2.Anonymous functions: Lambda functions are anonymous functions, meaning they do not require a name. This makes them useful for situations where a small function is needed to be used only once.\n",
+    "\n",
+    "3.Function objects: Lambda functions are function objects, which means they can be passed as arguments to other functions or returned as values from functions.\n",
+    "\n",
+    "4.Faster execution: Lambda functions are usually faster to execute than regular functions because they do not require the creation of a separate function object.\n",
+    "\n",
+    "5.Functional programming: Lambda functions are commonly used in functional programming to apply functions to a sequence of elements, such as a list or dictionary, in a concise and readable way."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b3f75d7a",
+   "metadata": {},
+   "source": [
+    "## 3. Compare and contrast map, filter, and reduce.\n",
+    "\n",
+    "Ans:-map, filter, and reduce are three built-in functions in Python that allow for efficient and concise data manipulation operations on iterable objects.\n",
+    "\n",
+    "map() function applies a given function to each element of an iterable and returns a new iterable with the transformed elements. The syntax of map() is:\n",
+    "\n",
+    "map(function, iterable)\n",
+    "\n",
+    "\n",
+    "For example, to square each element in a list, we can use the map() function as follows:\n",
+    "\n",
+    "numbers = [1, 2, 3, 4, 5]\n",
+    "\n",
+    "squares = map(lambda x: x**2, numbers)\n",
+    "\n",
+    "print(list(squares)) # Output: [1, 4, 9, 16, 25]\n",
+    "\n",
+    "filter() function filters the elements of an iterable based on a given condition and returns a new iterable with only the elements that meet the condition. The syntax of filter() is:\n",
+    "\n",
+    "filter(function, iterable)\n",
+    "\n",
+    "For example, to filter out all even numbers in a list, we can use the filter() function as follows:\n",
+    "\n",
+    "numbers = [1, 2, 3, 4, 5]\n",
+    "\n",
+    "odds = filter(lambda x: x%2 != 0, numbers)\n",
+    "\n",
+    "print(list(odds)) # Output: [1, 3, 5]\n",
+    "\n",
+    "\n",
+    "reduce() function aggregates the elements of an iterable to a single value based on a given function and returns the aggregated value. The syntax of reduce() is:\n",
+    "\n",
+    "\n",
+    "reduce(function, iterable)\n",
+    "\n",
+    "\n",
+    "For example, to calculate the sum of all elements in a list, we can use the reduce() function as follows:\n",
+    "\n",
+    "from functools import reduce\n",
+    "\n",
+    "numbers = [1, 2, 3, 4, 5]\n",
+    "\n",
+    "total = reduce(lambda x, y: x+y, numbers)\n",
+    "\n",
+    "print(total) # Output: 15\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f0b93a3a",
+   "metadata": {},
+   "source": [
+    "## 4. What are function annotations, and how are they used?\n",
+    "\n",
+    "Ans:-Function annotations in Python are a way to add metadata to function arguments and return values, specifying their types, default values, and other information. Function annotations are defined using colons and are added after the argument names, with the annotation value specified after the colon.\n",
+    "\n",
+    "For example, the following function definition has annotations:\n",
+    "\n",
+    "def my_func(a: int, b: str = 'hello') -> bool:\n",
+    "\n",
+    "    return True\n",
+    "\n",
+    "Function annotations are not enforced by the Python interpreter, and they are not used for type checking or error handling. Instead, they are typically used as documentation for developers to understand the expected types of the function arguments and return values.\n",
+    "\n",
+    "Annotations can also be used with variable annotations, allowing for the annotation of variables in a similar way. Variable annotations are defined by prefixing the variable name with the annotation, separated by a colon."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8abdbb40",
+   "metadata": {},
+   "source": [
+    "## 5. What are recursive functions, and how are they used?\n",
+    "\n",
+    "Ans:-Recursive functions are functions that call themselves, either directly or indirectly, to solve a problem. They are used to solve problems that can be broken down into smaller and smaller sub-problems that can be solved with the same algorithm. A recursive function has a base case, which is a condition that is used to stop the recursion, and a recursive case, which is where the function calls itself.\n",
+    "\n",
+    "The basic idea of a recursive function is to break down a problem into a smaller sub-problem, solve the sub-problem using the same function, and then combine the solution of the sub-problem with the solution of the larger problem. This process is repeated until the base case is reached, which is a condition that signals the end of the recursion.\n",
+    "\n",
+    "Recursive functions can be used to solve a wide variety of problems, including searching, sorting, and traversing data structures like trees and graphs. They can be used to solve problems that are difficult or impossible to solve with iterative approaches.\n",
+    "\n",
+    "Recursive functions can be more elegant and concise than iterative solutions, but they can also be less efficient in terms of memory usage and processing time. It is important to carefully consider the trade-offs between recursive and iterative solutions when designing algorithms.\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dcbf4298",
+   "metadata": {},
+   "source": [
+    "## 6. What are some general design guidelines for coding functions?\n",
+    "\n",
+    "Ans:-Here are some general design guidelines for coding functions:\n",
+    "\n",
+    "Function names should be descriptive and should indicate what the function does.\n",
+    "\n",
+    "Functions should perform only one task or do one thing. This makes the code easier to read and understand.\n",
+    "\n",
+    "Functions should have clear input and output parameters. The parameters should have meaningful names that indicate their purpose.\n",
+    "\n",
+    "Functions should not have side effects. This means that they should not modify any variables outside of their scope.\n",
+    "\n",
+    "Functions should be modular and reusable. This means that they should be designed in such a way that they can be easily used in other parts of the code.\n",
+    "\n",
+    "Functions should be well-documented. This includes clear and concise comments explaining what the function does, what inputs it expects, what outputs it produces, and any assumptions or limitations of the function.\n",
+    "\n",
+    "Functions should have error handling built in. This means that they should check their inputs for correctness and handle any errors that may arise.\n",
+    "\n",
+    "Functions should be tested thoroughly to ensure that they are working as intended. This includes testing for expected outputs and edge cases."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f635128b",
+   "metadata": {},
+   "source": [
+    "## 7. Name three or more ways that functions can communicate results to a caller.\n",
+    "\n",
+    "Ans:-Functions can communicate results to a caller in several ways, including:\n",
+    "\n",
+    "Return statement: The most common way for a function to communicate results to a caller is by using the return statement. The return statement can return any object or value from the function to the caller.\n",
+    "\n",
+    "Print statement: A function can use the print statement to display results to the user on the console. However, this does not actually communicate the result to the caller; it simply displays it.\n",
+    "\n",
+    "Global variables: A function can also use global variables to communicate results to the caller. This approach is not recommended, as it can lead to code that is difficult to read and maintain.\n",
+    "\n",
+    "Exception handling: Functions can raise exceptions to signal errors or unexpected conditions to the caller. This is particularly useful when a function is called from within a larger program and the caller needs to be notified of an error.\n",
+    "\n",
+    "Callbacks: Functions can also use callbacks to communicate results to the caller. A callback is a function that is passed as an argument to another function and is called back by that function when it has completed its task. This approach is useful when the result of the function is not known at the time the function is called, but the caller needs to be notified when the result is available."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "50d03dc2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
