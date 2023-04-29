@@ -1,0 +1,275 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "964a72ec",
+   "metadata": {},
+   "source": [
+    "## 1.\tWrite a Python program to check if the given number is a Disarium Number?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "67785fdd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter a number: 258\n",
+      "258 is not a Disarium Number\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = int(input(\"Enter a number: \"))\n",
+    "\n",
+    "\n",
+    "num_str = str(num)\n",
+    "num_digits = len(num_str)\n",
+    "\n",
+    "\n",
+    "sum = 0\n",
+    "for i in range(num_digits):\n",
+    "    digit = int(num_str[i])\n",
+    "    sum += digit**(i+1)\n",
+    "\n",
+    "\n",
+    "if sum == num:\n",
+    "    print(num, \"is a Disarium Number\")\n",
+    "else:\n",
+    "    print(num, \"is not a Disarium Number\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e783ca87",
+   "metadata": {},
+   "source": [
+    "## 2.\tWrite a Python program to print all disarium numbers between 1 to 100?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "6a42aa6c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n",
+      "89\n"
+     ]
+    }
+   ],
+   "source": [
+    "for num in range(1, 101):\n",
+    "    num_str = str(num)\n",
+    "    num_digits = len(num_str)\n",
+    "    sum = 0\n",
+    "    for i in range(num_digits):\n",
+    "        digit = int(num_str[i])\n",
+    "        sum += digit**(i+1)\n",
+    "    if sum == num:\n",
+    "        print(num)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "666f90ae",
+   "metadata": {},
+   "source": [
+    "## 3.\tWrite a Python program to check if the given number is Happy Number?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "e08d1129",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter a number: 23\n",
+      "23 is a Happy Number\n"
+     ]
+    }
+   ],
+   "source": [
+    "# define a function to calculate the sum of square of digits\n",
+    "def sum_of_squares(num):\n",
+    "    sum = 0\n",
+    "    while num > 0:\n",
+    "        digit = num % 10\n",
+    "        sum += digit**2\n",
+    "        num //= 10\n",
+    "    return sum\n",
+    "\n",
+    "# get input number from user\n",
+    "num = int(input(\"Enter a number: \"))\n",
+    "\n",
+    "# check if the number is a happy number\n",
+    "temp = num\n",
+    "while True:\n",
+    "    temp = sum_of_squares(temp)\n",
+    "    if temp == 1:\n",
+    "        print(num, \"is a Happy Number\")\n",
+    "        break\n",
+    "    elif temp == num:\n",
+    "        print(num, \"is not a Happy Number\")\n",
+    "        break\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b70d7149",
+   "metadata": {},
+   "source": [
+    "## 4.\tWrite a Python program to print all happy numbers between 1 and 100?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f6514b1d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "def sum_of_squares(num):\n",
+    "    sum = 0\n",
+    "    while num > 0:\n",
+    "        digit = num % 10\n",
+    "        sum += digit**2\n",
+    "        num //= 10\n",
+    "    return sum\n",
+    "\n",
+    "\n",
+    "def is_happy(num):\n",
+    "    temp = num\n",
+    "    while True:\n",
+    "        temp = sum_of_squares(temp)\n",
+    "        if temp == 1:\n",
+    "            return True\n",
+    "        elif temp == num:\n",
+    "            return False\n",
+    "\n",
+    "\n",
+    "for num in range(1, 101):\n",
+    "    if is_happy(num):\n",
+    "        print(num)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b8a6a6ea",
+   "metadata": {},
+   "source": [
+    "## 5.\tWrite a Python program to determine whether the given number is a Harshad Number?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "412887b1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter a number: 25\n",
+      "25 is not a Harshad Number\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "num = int(input(\"Enter a number: \"))\n",
+    "\n",
+    "\n",
+    "sum_of_digits = sum(int(digit) for digit in str(num))\n",
+    "\n",
+    "\n",
+    "if num % sum_of_digits == 0:\n",
+    "    print(num, \"is a Harshad Number\")\n",
+    "else:\n",
+    "    print(num, \"is not a Harshad Number\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e2a36313",
+   "metadata": {},
+   "source": [
+    "## 6.\tWrite a Python program to print all pronic numbers between 1 and 100?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ab18be6c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "for num in range(1, 101):\n",
+    "\n",
+    "    product = num * (num + 1)\n",
+    "    \n",
+    "    if product == num:\n",
+    "        print(num)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e86730d2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
